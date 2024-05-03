@@ -8,4 +8,8 @@ module project.energy {
 
     opens project.energy to javafx.fxml;
     exports project.energy;
+    exports project.controller;
+    opens project.controller to javafx.fxml;
+    exports project.energy.controller;
+    opens project.energy.controller to javafx.fxml;
 }

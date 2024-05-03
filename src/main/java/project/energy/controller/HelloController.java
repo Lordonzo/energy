@@ -1,4 +1,4 @@
-package project.energy;
+package project.energy.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
