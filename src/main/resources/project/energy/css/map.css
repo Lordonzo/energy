@@ -1,0 +1,11 @@
+@import "style.css";
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-border-width: 1;
+    -fx-border-color: black;
+}
+
+.arrow {
+    -fx-padding: 0;
+}
