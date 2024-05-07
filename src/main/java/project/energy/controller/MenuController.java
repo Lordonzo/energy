@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import project.energy.App;
 
+import java.util.Objects;
+
 public class MenuController {
 
     @FXML
@@ -60,6 +62,7 @@ public class MenuController {
             double height = stage.getHeight();
             double width = stage.getWidth();
             Scene scene = new Scene(loader.load(), width, height);
+            scene.getStylesheets().addAll(Objects.requireNonNull(App.class.getResource("css/edu.css")).toExternalForm());
             stage.setTitle("Plateforme éducative");
             stage.setScene(scene);
             stage.show();

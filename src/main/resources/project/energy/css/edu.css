@@ -1,0 +1,38 @@
+#main-pane {
+    -fx-background-color: #E0E0E0;
+}
+
+#pane2 {
+    -fx-background-color: #A0A0A0;
+}
+
+#pane {
+    -fx-background-color: #C0C0C0;
+}
+
+.green-button {
+    -fx-background-color: linear-gradient(to top,  #78efee ,  #c6ef78 );
+}
+
+.title {
+    -fx-font-size: 45px;
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+}
+
+.enerj {
+    -fx-font-size: 32px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(to top,  #4fdd83 , black);
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, green, 10, 0, 0, 0);
+}
+
+#text {
+    -fx-font-size: 16px;
+}
+
+#titre2 {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
