@@ -7,6 +7,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import project.energy.App;
 
+import java.util.Objects;
+
 public class SimuController {
 
     @FXML
@@ -37,13 +39,14 @@ public class SimuController {
         energyType.getItems().addAll("Solaire", "Eolienne", "Hydraulique");
     }
 
-    private void openWindow(String fxmlFile, String title) {
+    private void openWindow(String fxmlFile, String title, String style) {
         try {
             FXMLLoader loader = new FXMLLoader(App.class.getResource(fxmlFile));
             Stage stage = (Stage) menuBar.getScene().getWindow(); // Assuming menuBar is always instantiated
             double height = stage.getHeight();
             double width = stage.getWidth();
             Scene scene = new Scene(loader.load(), width, height);
+            scene.getStylesheets().addAll(Objects.requireNonNull(App.class.getResource(style)).toExternalForm());
             stage.setTitle(title);
             stage.setScene(scene);
             stage.show();
@@ -54,16 +57,16 @@ public class SimuController {
 
     @FXML
     public void openEdu() {
-        openWindow("eduWindow.fxml", "Plateforme éducative");
+        openWindow("eduWindow.fxml", "Plateforme éducative","css/edu.css");
     }
 
     @FXML
     public void openCarte() {
-        openWindow("carteWindow.fxml", "Carte des énergies par zone géographique");
+        openWindow("carteWindow.fxml", "Carte des énergies par zone géographique","css/simu.css");
     }
 
     @FXML
     public void openAccueil() {
-        openWindow("menu.fxml", "Page d'accueil");
+        openWindow("menu.fxml", "Page d'accueil","css/style.css");
     }
 }
