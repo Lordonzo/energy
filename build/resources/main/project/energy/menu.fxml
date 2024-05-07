@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox id="pane" alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="project.energy.controller.MenuController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="ENERJ"/>
+    <Label text="Le guide vert"/>
+
+    <Button fx:id="simuButton" text="SIMULATEUR DU PRIX DE L'INSTALLATION" onAction="#openSimu"/>
+    <Button fx:id="carteButton" text="CARET DES ENERGIES PAR ZONE GEOGRAPHIQUE EN FRANCE" onAction="#openCarte"/>
+    <Button fx:id="eduButton" text="PLATEFORME EDUCATIVE" onAction="#openEdu"/>
+
+</VBox>
