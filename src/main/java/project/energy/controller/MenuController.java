@@ -29,8 +29,10 @@ public class MenuController {
     public void openSimu(){
         try {
             FXMLLoader loader =  new FXMLLoader(App.class.getResource("simuWindow.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = new Stage();
+            Stage stage = (Stage) simuButton.getScene().getWindow();
+            double height = stage.getHeight();
+            double width = stage.getWidth();
+            Scene scene = new Scene(loader.load(), width, height);
             stage.setTitle("Simulateur du coût de l'intallation");
             stage.setScene(scene);
             stage.show();
@@ -42,8 +44,10 @@ public class MenuController {
     public void openCarte(){
         try {
             FXMLLoader loader =  new FXMLLoader(App.class.getResource("carteWindow.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = new Stage();
+            Stage stage = (Stage) carteButton.getScene().getWindow();
+            double height = stage.getHeight();
+            double width = stage.getWidth();
+            Scene scene = new Scene(loader.load(), width, height);
             stage.setTitle("Carte des énergies par zone géographique");
             stage.setScene(scene);
             stage.show();
@@ -55,8 +59,10 @@ public class MenuController {
     public void openEdu(){
         try {
             FXMLLoader loader =  new FXMLLoader(App.class.getResource("eduWindow.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = new Stage();
+            Stage stage = (Stage) eduButton.getScene().getWindow();
+            double height = stage.getHeight();
+            double width = stage.getWidth();
+            Scene scene = new Scene(loader.load(), width, height);
             stage.setTitle("Plateforme éducative");
             stage.setScene(scene);
             stage.show();
