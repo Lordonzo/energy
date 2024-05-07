@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
@@ -13,11 +10,14 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label text="ENERJ"/>
-    <Label text="Le guide vert"/>
+    <Label text="ENERJ" styleClass="energy"/>
+    <Label text="Le guide vert" styleClass="guide-label"/>
 
-    <Button fx:id="simuButton" text="SIMULATEUR DU PRIX DE L'INSTALLATION" onAction="#openSimu"/>
-    <Button fx:id="carteButton" text="CARET DES ENERGIES PAR ZONE GEOGRAPHIQUE EN FRANCE" onAction="#openCarte"/>
-    <Button fx:id="eduButton" text="PLATEFORME EDUCATIVE" onAction="#openEdu"/>
+    <Button fx:id="simuButton" text="SIMULATEUR DU PRIX DE L'INSTALLATION" onAction="#openSimu" styleClass="green-button"
+            prefWidth="450" prefHeight="40"/>
+    <Button fx:id="carteButton" text="CARTES DES ÉNERGIES PAR ZONE GÉOGRAPHIQUE EN FRANCE" onAction="#openCarte" styleClass="green-button"
+            prefWidth="450" prefHeight="40"/>
+    <Button fx:id="eduButton" text="PLATEFORME ÉDUCATIVE" onAction="#openEdu" styleClass="green-button"
+            prefWidth="450" prefHeight="40"/>
 
 </VBox>
