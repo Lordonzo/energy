@@ -9,8 +9,6 @@ import javafx.stage.Stage;
 import project.energy.App;
 
 public class EduController {
-    @FXML
-    public Button quiz ;
 
     @FXML
     public Label solText ;
@@ -30,7 +28,7 @@ public class EduController {
     public void openSimu(){
         try {
             FXMLLoader loader =  new FXMLLoader(App.class.getResource("simuWindow.fxml"));
-            Stage stage = (Stage) quiz.getScene().getWindow();
+            Stage stage = (Stage) solText.getScene().getWindow();
             double height = stage.getHeight();
             double width = stage.getWidth();
             Scene scene = new Scene(loader.load(), width, height);
@@ -45,7 +43,7 @@ public class EduController {
     public void openCarte(){
         try {
             FXMLLoader loader =  new FXMLLoader(App.class.getResource("carteWindow.fxml"));
-            Stage stage = (Stage) quiz.getScene().getWindow();
+            Stage stage = (Stage) solText.getScene().getWindow();
             double height = stage.getHeight();
             double width = stage.getWidth();
             Scene scene = new Scene(loader.load(), width, height);
@@ -60,7 +58,7 @@ public class EduController {
     public void openAccueil(){
         try {
             FXMLLoader loader =  new FXMLLoader(App.class.getResource("menu.fxml"));
-            Stage stage = (Stage) quiz.getScene().getWindow();
+            Stage stage = (Stage) solText.getScene().getWindow();
             double height = stage.getHeight();
             double width = stage.getWidth();
             Scene scene = new Scene(loader.load(), width, height);

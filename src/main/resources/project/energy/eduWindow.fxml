@@ -7,70 +7,109 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
-<BorderPane xmlns="http://javafx.com/javafx"
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane id="main-pane" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="project.energy.controller.EduController"
             prefHeight="400.0" prefWidth="600.0">
     <top>
         <BorderPane>
+            <padding>
+                <Insets top="30" right="20" bottom="30" left="20" />
+            </padding>
             <left>
                 <VBox>
-                    <MenuBar>
+                    <MenuBar styleClass="green-button">
                         <Menu text="Menu">
                             <MenuItem text="Page d'accueil" onAction="#openAccueil"/>
                             <MenuItem text="Simulateur" onAction="#openSimu"/>
                             <MenuItem text="Carte" onAction="#openCarte"/>
                         </Menu>
                     </MenuBar>
-                    <Button fx:id="quiz" text="QUIZ"></Button>
                 </VBox>
             </left>
 
-            <center><Label text="Plateforme éducative"/></center>
+            <center><Label text="Plateforme éducative" styleClass="title"/></center>
 
-            <right><Label text="ENERJ"/></right>
+            <right><Label text="ENERJ" styleClass="enerj"/></right>
         </BorderPane>
     </top>
 
     <center>
         <BorderPane>
             <padding>
-                <Insets top="10" right="20" bottom="10" left="20" />
+                <Insets top="10" right="20" bottom="30" left="20" />
             </padding>
             <left>
-                <BorderPane prefWidth="400" prefHeight="200" HBox.hgrow="ALWAYS">
+                <BorderPane id="pane" prefWidth="400" prefHeight="200" HBox.hgrow="ALWAYS">
                     <padding>
-                        <Insets top="10" right="20" bottom="10" left="20" />
+                        <Insets top="0" right="20" bottom="0" left="20" />
                     </padding>
 
+                    <top>
+                        <Label id="titre2" text="Energie solaire"/>
+                    </top>
                     <center>
-                        <Label text="Energie solaire"/>
-                        <Label fx:id="solText" wrapText="true"/>
+                        <ImageView
+                                fitWidth="100"
+                                preserveRatio="true">
+                            <image>
+                                <Image url="@images/solaire.png" />
+                            </image>
+                        </ImageView>
                     </center>
+                    <bottom>
+                        <Label id="text" fx:id="solText" wrapText="true"/>
+                    </bottom>
+
+
                 </BorderPane>
             </left>
 
             <center>
-                <BorderPane prefWidth="400" prefHeight="200" HBox.hgrow="ALWAYS">
+                <BorderPane id="pane2" prefWidth="400" prefHeight="200" HBox.hgrow="ALWAYS">
                     <padding>
                         <Insets top="10" right="20" bottom="10" left="20" />
                     </padding>
+                    <top>
+                        <Label id="titre2" text="Energie éolienne"/>
+                    </top>
                     <center>
-                        <Label text="Energie éolienne"/>
-                        <Label fx:id="eolText" wrapText="true"/>
+                        <ImageView
+                                fitWidth="100"
+                                preserveRatio="true">
+                            <image>
+                                <Image url="@images/eolienne.png" />
+                            </image>
+                        </ImageView>
                     </center>
+                    <bottom>
+                        <Label id="text" fx:id="eolText" wrapText="true"/>
+                    </bottom>
                 </BorderPane>
             </center>
 
             <right>
-                <BorderPane prefWidth="400" prefHeight="200" HBox.hgrow="ALWAYS">
+                <BorderPane id="pane" prefWidth="400" prefHeight="200" HBox.hgrow="ALWAYS">
                     <padding>
                         <Insets top="10" right="20" bottom="10" left="20" />
                     </padding>
+                    <top>
+                        <Label id="titre2" text="Energie hydraulique"/>
+                    </top>
                     <center>
-                        <Label text="Energie hydraulique"/>
-                        <Label fx:id="hydText" wrapText="true"/>
+                        <ImageView
+                                fitWidth="100"
+                                preserveRatio="true">
+                            <image>
+                                <Image url="@images/hydraulique.png" />
+                            </image>
+                        </ImageView>
                     </center>
+                    <bottom>
+                        <Label id="text" fx:id="hydText" wrapText="true"/>
+                    </bottom>
                 </BorderPane>
             </right>
         </BorderPane>
