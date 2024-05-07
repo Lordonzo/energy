@@ -4,12 +4,15 @@ import com.gluonhq.maps.MapView;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import project.energy.App;
 
 import java.io.IOException;
@@ -19,31 +22,55 @@ import java.util.ResourceBundle;
 
 public class CarteController implements Initializable {
     @FXML
-    private AnchorPane root;
-    @FXML
-    private ImageView franceImageView;
+    private VBox pane;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        franceImageView.setFitWidth(960);
-    }
-
-    private MapView createMapView() {
-        MapView mapView = new MapView();
-        return mapView;
     }
 
     @FXML
-    private void inColor() {
-        ColorAdjust colorAdjust = new ColorAdjust();
-        colorAdjust.setContrast(20);
-        franceImageView.setEffect(colorAdjust);
+    private void openSimu(){
+        try {
+            FXMLLoader loader =  new FXMLLoader(App.class.getResource("simuWindow.fxml"));
+            Stage stage = (Stage) pane.getScene().getWindow();
+            double height = stage.getHeight();
+            double width = stage.getWidth();
+            Scene scene = new Scene(loader.load(), width, height);
+            stage.setTitle("Simulateur du coût de l'intallation");
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
-
     @FXML
-    private void outColor() {
-        ColorAdjust colorAdjust = new ColorAdjust();
-        colorAdjust.setContrast(0);
-        franceImageView.setEffect(colorAdjust);
+    private void openEdu(){
+        try {
+            FXMLLoader loader =  new FXMLLoader(App.class.getResource("eduWindow.fxml"));
+            Stage stage = (Stage) pane.getScene().getWindow();
+            double height = stage.getHeight();
+            double width = stage.getWidth();
+            Scene scene = new Scene(loader.load(), width, height);
+            stage.setTitle("Carte des énergies par zone géographique");
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void openAccueil(){
+        try {
+            FXMLLoader loader =  new FXMLLoader(App.class.getResource("menu.fxml"));
+            Stage stage = (Stage) pane.getScene().getWindow();
+            double height = stage.getHeight();
+            double width = stage.getWidth();
+            Scene scene = new Scene(loader.load(), width, height);
+            stage.setTitle("Plateforme éducative");
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

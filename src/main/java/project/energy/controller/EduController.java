@@ -62,7 +62,7 @@ public class EduController {
             double height = stage.getHeight();
             double width = stage.getWidth();
             Scene scene = new Scene(loader.load(), width, height);
-            stage.setTitle("Plateforme éducative");
+            stage.setTitle("Page d'accueil");
             stage.setScene(scene);
             stage.show();
         }catch(Exception e){
