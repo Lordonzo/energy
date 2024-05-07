@@ -19,11 +19,11 @@
             </padding>
             <left>
                 <VBox>
-                    <MenuBar styleClass="green-button">
+                    <MenuBar styleClass="green-button" fx:id="menuBar">
                         <Menu text="Menu">
-                            <MenuItem text="Page d'accueil"/>
-                            <MenuItem text="Simulateur" />
-                            <MenuItem text="Carte"/>
+                            <MenuItem text="Page d'accueil" onAction="#openAccueil"/>
+                            <MenuItem text="Education" onAction="#openEdu"/>
+                            <MenuItem text="Carte" onAction="#openCarte"/>
                         </Menu>
                     </MenuBar>
                 </VBox>
