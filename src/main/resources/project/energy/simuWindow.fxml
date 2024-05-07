@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 
-<?import javafx.geometry.Insets?>
-<VBox xmlns="http://javafx.com/javafx"
-           xmlns:fx="http://javafx.com/fxml"
-           fx:controller="project.energy.controller.SimuController"
-           prefHeight="400.0" prefWidth="600.0" alignment="TOP_CENTER" spacing="20">
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="project.energy.controller.SimuController"
+            prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f0f0f0;">
 
+    <!-- Configuration du padding pour BorderPane -->
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <HBox>
-        <MenuBar fx:id="menuBar">
-            <Menu fx:id="exit" text="EXIT">
-                <MenuItem text="Page d'accueil"/>
-                <MenuItem text="Carte"/>
-                <MenuItem text="Plateforme Educative"/>
-            </Menu>
-        </MenuBar>
+    <!-- Top area: Menu Button and Title Label -->
+    <top>
+        <BorderPane>
+            <padding>
+                <Insets top="30" right="20" bottom="30" left="20" />
+            </padding>
+            <left>
+                <VBox>
+                    <MenuBar styleClass="green-button">
+                        <Menu text="Menu">
+                            <MenuItem text="Page d'accueil"/>
+                            <MenuItem text="Simulateur" />
+                            <MenuItem text="Carte"/>
+                        </Menu>
+                    </MenuBar>
+                </VBox>
+            </left>
 
-        <Label text="Simulateur du prix d'installation"/>
-    </HBox>
+            <center><Label text="Simulateur du prix d'installation" styleClass="title"/></center>
 
-    <VBox alignment="TOP_CENTER" spacing="20" prefWidth="400" prefHeight="300">
-        <Label fx:id="energyLabel" text="Type d'energies" prefHeight="400"/>
-        <ComboBox fx:id="energyType" prefHeight="400" prefWidth="600"/>
+            <right><Label text="ENERJ" styleClass="enerj" /></right>
+        </BorderPane>
+    </top>
 
-        <Label fx:id="surfaceLabel" text="Surface en m2"/>
-        <TextField fx:id="surfaceTextField" prefHeight="400" prefWidth="600"/>
+    <!-- Center area: GridPane for form input -->
+    <center>
+        <StackPane>
+            <GridPane alignment="CENTER" hgap="20" vgap="20">
+                <Label text="Type d'énergies" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="title2" />
+                <ComboBox fx:id="energyType" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="450" prefHeight="40" styleClass="box"/>
 
-        <Label fx:id="consommationLabel" text="Consommation électrique mensuelle"/>
-        <TextField fx:id="consommationTextField"/>
+                <Label text="Surface en m2" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="title2"/>
+                <TextField fx:id="surfaceTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="450" prefHeight="40" styleClass="box"/>
 
-        <HBox>
-            <Button fx:id="calculerButton" text="Calculer"/>
-            <Label fx:id="resultatLabel" text="Resultat"/>
-        </HBox>
-    </VBox>
+                <Label text="Consommation électrique mensuelle" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="title2"/>
+                <TextField fx:id="consommationTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="450" prefHeight="40" styleClass="box"/>
 
+                <HBox GridPane.rowIndex="3" GridPane.columnSpan="2" alignment="CENTER" spacing="10">
+                    <Button fx:id="calculerButton" text="Calculer" prefWidth="200" prefHeight="40" styleClass="green-button2" />
 
-
-
-
-
-</VBox>
+                    <Label fx:id="resultatLabel" text="Resultat" styleClass="title2"/>
+                    <TextField fx:id="resultatTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="200" prefHeight="50" styleClass="result"/>
+                </HBox>
+            </GridPane>
+        </StackPane>
+    </center>
+</BorderPane>

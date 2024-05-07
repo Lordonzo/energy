@@ -2,7 +2,6 @@ package project.energy.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -32,6 +31,7 @@ public class MenuController {
             double height = stage.getHeight();
             double width = stage.getWidth();
             Scene scene = new Scene(loader.load(), width, height);
+            scene.getStylesheets().addAll(Objects.requireNonNull(App.class.getResource("css/simu.css")).toExternalForm());
             stage.setTitle("Simulateur du coût de l'intallation");
             stage.setScene(scene);
             stage.show();
