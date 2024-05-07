@@ -21,9 +21,6 @@ public class MenuController {
 
 
     public void initialize(){
-        simuButton.setOnAction(e -> openSimu());
-        simuButton.setOnAction(e -> openCarte());
-        simuButton.setOnAction(e -> openEdu());
     }
 
     public void openSimu(){
