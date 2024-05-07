@@ -5,6 +5,7 @@ module project.energy {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires com.gluonhq.maps;
 
     opens project.energy to javafx.fxml;
     exports project.energy;
