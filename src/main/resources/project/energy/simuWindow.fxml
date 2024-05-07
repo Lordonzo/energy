@@ -6,9 +6,47 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="project.energy.controller.SimuController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="project.energy.controller.SimuController"
+           prefHeight="400.0" prefWidth="600.0" alignment="TOP_CENTER" spacing="20">
 
-</AnchorPane>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox>
+        <MenuBar fx:id="menuBar">
+            <Menu fx:id="exit" text="EXIT">
+                <MenuItem text="Page d'accueil"/>
+                <MenuItem text="Carte"/>
+                <MenuItem text="Plateforme Educative"/>
+            </Menu>
+        </MenuBar>
+
+        <Label text="Simulateur du prix d'installation"/>
+    </HBox>
+
+    <VBox alignment="TOP_CENTER" spacing="20" prefWidth="400" prefHeight="300">
+        <Label fx:id="energyLabel" text="Type d'energies" prefHeight="400"/>
+        <ComboBox fx:id="energyType" prefHeight="400" prefWidth="600"/>
+
+        <Label fx:id="surfaceLabel" text="Surface en m2"/>
+        <TextField fx:id="surfaceTextField" prefHeight="400" prefWidth="600"/>
+
+        <Label fx:id="consommationLabel" text="Consommation électrique mensuelle"/>
+        <TextField fx:id="consommationTextField"/>
+
+        <HBox>
+            <Button fx:id="calculerButton" text="Calculer"/>
+            <Label fx:id="resultatLabel" text="Resultat"/>
+        </HBox>
+    </VBox>
+
+
+
+
+
+
+</VBox>
