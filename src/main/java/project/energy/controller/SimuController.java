@@ -45,7 +45,7 @@ public class SimuController {
             Stage stage = (Stage) menuBar.getScene().getWindow(); // Assuming menuBar is always instantiated
             double height = stage.getHeight();
             double width = stage.getWidth();
-            Scene scene = new Scene(loader.load(), width, height);
+            Scene scene = new Scene(loader.load(), 1200, 630);
             scene.getStylesheets().addAll(Objects.requireNonNull(App.class.getResource(style)).toExternalForm());
             stage.setTitle(title);
             stage.setScene(scene);

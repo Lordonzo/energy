@@ -65,9 +65,7 @@ public class CarteController implements Initializable {
         try {
             FXMLLoader loader =  new FXMLLoader(App.class.getResource("menu.fxml"));
             Stage stage = (Stage) pane.getScene().getWindow();
-            double height = stage.getHeight();
-            double width = stage.getWidth();
-            Scene scene = new Scene(loader.load(), width, height);
+            Scene scene = new Scene(loader.load(), 1200, 630);
             stage.setTitle("Plateforme éducative");
             scene.getStylesheets().addAll(Objects.requireNonNull(App.class.getResource("css/style.css")).toExternalForm());
             stage.setScene(scene);

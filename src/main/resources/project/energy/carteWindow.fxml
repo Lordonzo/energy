@@ -11,29 +11,30 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="pane" alignment="TOP_CENTER" prefHeight="630" prefWidth="1200" spacing="20" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.energy.controller.CarteController">
+<VBox fx:id="pane" alignment="TOP_CENTER" prefHeight="630" prefWidth="1200" spacing="20" stylesheets="@css/map.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.energy.controller.CarteController">
 
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <HBox alignment="CENTER_LEFT">
-        <MenuBar>
-            <Menu text="EXIT">
-                <MenuItem onAction="#openAccueil" text="Page d'accueil" />
-                <MenuItem onAction="#openSimu" text="Simulateur du coût de l'intallation" />
-                <MenuItem onAction="#openEdu" text="Plateforme Educative" />
-            </Menu>
-        </MenuBar>
+    <BorderPane>
+        <padding>
+            <Insets top="30" right="20" bottom="30" left="20" />
+        </padding>
+        <left>
+            <MenuBar styleClass="green-button">
+                <Menu styleClass="menu-button" text="Menu">
+                    <MenuItem onAction="#openAccueil" text="Page d'accueil" />
+                    <MenuItem onAction="#openSimu" text="Simulateur du coût de l'intallation" />
+                    <MenuItem onAction="#openEdu" text="Plateforme Educative" />
+                </Menu>
+            </MenuBar>
+        </left>
 
-        <Label alignment="CENTER" contentDisplay="CENTER" text="Carte des énergies utilisées sur le territoire français">
-         <HBox.margin>
-            <Insets left="350.0" />
-         </HBox.margin></Label>
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-    </HBox>
+        <center><Label text="Carte des énergies utilisées sur le territoire français" styleClass="title"/></center>
+
+        <right><Label text="ENERJ" styleClass="enerj"/></right>
+    </BorderPane>
 
     <VBox alignment="TOP_CENTER" prefHeight="300" prefWidth="400" spacing="20">
         <ImageView fitHeight="508.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
