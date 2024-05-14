@@ -69,4 +69,56 @@ public class SimuController {
     public void openAccueil() {
         openWindow("menu.fxml", "Page d'accueil","css/style.css");
     }
+
+    @FXML
+    protected void doCalculation() {
+        String type = energyType.getValue();
+        Double surface = Double.parseDouble(surfaceTextField.getText());
+        Double consommation = Double.parseDouble(consommationTextField.getText());
+        Double resultat = 0.0;
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        switch (type) {
+            case "Solaire":
+                Double puissanceS = consommation/120; //120 = 30 x 4h d'ensolleiment moyen en France
+                alert.setTitle("Solaire");
+                if (surface < puissanceS * 7) {
+                    System.out.println(puissanceS);
+                    //7 m² par kw (surface necessaire)
+                    alert.setContentText("Surface insuffisante");
+                    alert.showAndWait();
+                }
+                resultat = puissanceS * 1500; //1500 euros par kwh
+                //installation d'un seul panneau solaire
+                resultatTextField.setText(Double.toString(resultat));
+                break;
+            case "Hydraulique":
+                alert.setTitle("Hydraulique");
+                Double puissanceH =  consommation/720; //car 30x24 heures dans 1 mois
+                if (puissanceH > 15) { //car 10 kw de puissance disponible en moyenne en France
+                    alert.setContentText("Puissance disponible moyenne insuffisante");
+                    alert.showAndWait();
+                } else if (surface < 1000) { //car il faut 1000 m² de moyenne pour une petite infrastructure
+                    alert.setContentText("Surface insuffisante");
+                    alert.showAndWait();
+                }
+                resultat = puissanceH * 3000; //pour 3000 euros par kw necessaire
+                resultatTextField.setText(Double.toString(resultat));
+                break;
+            case "Eolienne":
+                Double puissanceE = consommation/720; //720h dans le mois
+                Double puissance_unitaire = 5.0;
+                Double nb = (puissanceE / puissance_unitaire);
+                alert.setTitle("Eolienne");
+                if (surface < nb * 500) { //500 m² pour une eolienne
+                    alert.setContentText("Surface insuffisante");
+                    alert.showAndWait();
+                } else if (puissanceE > nb * puissance_unitaire) {
+                    alert.setContentText("Puissance disponible moyenne insuffisante");
+                    alert.showAndWait();
+                }
+                resultat = nb * 4000; //4000 euros d'installation pour 1 eolienne
+                resultatTextField.setText(Double.toString(resultat));
+                break;
+        }
+    }
 }
