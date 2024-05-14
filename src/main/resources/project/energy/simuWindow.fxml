@@ -45,11 +45,11 @@
                 <Label text="Surface en m2" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="title2"/>
                 <TextField fx:id="surfaceTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="450" prefHeight="40" styleClass="box"/>
 
-                <Label text="Consommation électrique mensuelle" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="title2"/>
+                <Label text="Consommation électrique mensuelle en KWH" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="title2"/>
                 <TextField fx:id="consommationTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="450" prefHeight="40" styleClass="box"/>
 
                 <HBox GridPane.rowIndex="3" GridPane.columnSpan="2" alignment="CENTER" spacing="10">
-                    <Button fx:id="calculerButton" text="Calculer" prefWidth="200" prefHeight="40" styleClass="green-button2" />
+                    <Button fx:id="calculerButton" text="Calculer" prefWidth="200" prefHeight="40" styleClass="green-button2" onAction="#doCalculation"/>
 
                     <Label fx:id="resultatLabel" text="Resultat" styleClass="title2"/>
                     <TextField fx:id="resultatTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="200" prefHeight="50" styleClass="result"/>
