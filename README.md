@@ -1,4 +1,4 @@
-# parser
+# ENERJ
 INF1610 Interfaces Graphiques (L3 S2) 
 
 ##################################################
